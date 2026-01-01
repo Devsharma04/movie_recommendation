@@ -15,7 +15,7 @@ function extractJSON(text) {
 
     return JSON.parse(cleaned);
   } catch (err) {
-    console.error("❌ JSON Parse Failed:", text);
+    console.error("JSON Parse Failed:", text);
     throw new Error("Invalid AI JSON response");
   }
 }
@@ -23,13 +23,15 @@ function extractJSON(text) {
 const fastify = Fastify({ logger: true });
 
 // CORS
-await fastify.register(cors, { origin: "*" });
+await fastify.register(cors, {
+  origin: true,
+});
 
 // MongoDB Connection
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => console.log("✅ MongoDB connected"))
-  .catch((err) => console.error("❌ MongoDB error:", err));
+  .catch((err) => console.error("MongoDB error:", err));
 
 // OpenAI Client
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
@@ -80,7 +82,8 @@ User preference:
     });
   }
 });
-// Server start
-fastify.listen({ port: 3000 }, () => {
-  console.log("🚀 Server running on http://localhost:3000");
+const PORT = process.env.PORT || 3000;
+
+fastify.listen({ port: PORT, host: "0.0.0.0" }, () => {
+  console.log(`Server running on port ${PORT}`);
 });

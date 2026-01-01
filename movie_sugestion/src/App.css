@@ -9,7 +9,6 @@ body {
   color: #e5e7eb;
 }
 
-/* Page center */
 .container {
   min-height: 100vh;
   display: flex;
@@ -18,7 +17,6 @@ body {
   padding: 20px;
 }
 
-/* Main card */
 .card {
   width: 100%;
   max-width: 520px;
@@ -29,14 +27,12 @@ body {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* Title */
 h1 {
   text-align: center;
   font-size: 1.8rem;
   margin-bottom: 25px;
 }
 
-/* Form */
 form {
   display: flex;
   gap: 12px;
@@ -67,7 +63,6 @@ button:hover {
   opacity: 0.95;
 }
 
-/* Loading */
 .loading {
   text-align: center;
   margin-top: 15px;
@@ -75,7 +70,6 @@ button:hover {
   opacity: 0.8;
 }
 
-/* Movie list */
 ul {
   list-style: none;
   padding: 0;
@@ -96,7 +90,6 @@ li:hover {
   background: rgba(255, 255, 255, 0.12);
 }
 
-/* Mobile tweak */
 @media (max-width: 480px) {
   form {
     flex-direction: column;

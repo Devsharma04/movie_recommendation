@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div style={{ padding: "40px", fontFamily: "Arial" }}>
-      <h1>🎬 Movie Recommendation App</h1>
+      <h1>Movie Recommendation App</h1>
 
       <form onSubmit={handleSubmit}>
         <input
